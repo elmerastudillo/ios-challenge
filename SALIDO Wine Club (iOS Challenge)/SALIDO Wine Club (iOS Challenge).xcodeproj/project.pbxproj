@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27387BF81EBE760D002C615B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27387BF71EBE760D002C615B /* main.m */; };
+		27387BFB1EBE760E002C615B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27387BFA1EBE760E002C615B /* AppDelegate.m */; };
+		27387BFE1EBE760E002C615B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27387BFD1EBE760E002C615B /* ViewController.m */; };
+		27387C011EBE760E002C615B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27387BFF1EBE760E002C615B /* Main.storyboard */; };
+		27387C031EBE760E002C615B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27387C021EBE760E002C615B /* Assets.xcassets */; };
+		27387C061EBE760E002C615B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27387C041EBE760E002C615B /* LaunchScreen.storyboard */; };
+		2756FB2B1EC162C600E44A55 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756FB2A1EC162C600E44A55 /* HomeViewController.m */; };
+		2756FB2E1EC1908F00E44A55 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756FB2D1EC1908F00E44A55 /* HomeTableViewCell.m */; };
+		2756FB311EC19DA200E44A55 /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756FB301EC19DA200E44A55 /* ShoppingCartViewController.m */; };
+		2756FB351EC2472100E44A55 /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756FB341EC2472100E44A55 /* SessionManager.m */; };
+		276BDB2E1ECCA88B0055A784 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276BDB2D1ECCA88B0055A784 /* LeftMenuViewController.m */; };
+		276BDB311ECCB7CA0055A784 /* EmployeesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276BDB301ECCB7CA0055A784 /* EmployeesTableViewController.m */; };
+		27A4E6CA1ED31D5B00666E77 /* EmployeesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A4E6C91ED31D5B00666E77 /* EmployeesTableViewCell.m */; };
+		27E870791ECE42EA0001E8E4 /* WineCartList.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E870781ECE42EA0001E8E4 /* WineCartList.m */; };
+		27E8707C1ECE78F00001E8E4 /* ShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E8707B1ECE78F00001E8E4 /* ShoppingCartTableViewCell.m */; };
+		27F29B1B1EC940CD008A9A32 /* UserRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F29B1A1EC940CD008A9A32 /* UserRealm.m */; };
+		27F77B0A1EC2912400C6A927 /* WineListRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F77B091EC2912400C6A927 /* WineListRequestModel.m */; };
+		27F77B0D1EC2920500C6A927 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F77B0C1EC2920500C6A927 /* APIManager.m */; };
+		27F77B101EC2B4C900C6A927 /* WineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F77B0F1EC2B4C900C6A927 /* WineModel.m */; };
+		27F77B131EC2BE3000C6A927 /* WineListResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F77B121EC2BE3000C6A927 /* WineListResponseModel.m */; };
+		27F77B161EC3C5BE00C6A927 /* WineRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F77B151EC3C5BE00C6A927 /* WineRealm.m */; };
+		27F77B1C1EC5A06900C6A927 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F77B1B1EC5A06900C6A927 /* DetailViewController.m */; };
+		380A42A3DD39816AB0A319E8 /* libPods-SALIDO Wine Club (iOS Challenge).a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E83BF707703495552F12A6 /* libPods-SALIDO Wine Club (iOS Challenge).a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		27387BF31EBE760D002C615B /* SALIDO Wine Club (iOS Challenge).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SALIDO Wine Club (iOS Challenge).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27387BF71EBE760D002C615B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27387BF91EBE760E002C615B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27387BFA1EBE760E002C615B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		27387BFC1EBE760E002C615B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		27387BFD1EBE760E002C615B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		27387C001EBE760E002C615B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27387C021EBE760E002C615B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27387C051EBE760E002C615B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27387C071EBE760E002C615B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2756FB291EC162C600E44A55 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
+		2756FB2A1EC162C600E44A55 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
+		2756FB2C1EC1908F00E44A55 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		2756FB2D1EC1908F00E44A55 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		2756FB2F1EC19DA200E44A55 /* ShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartViewController.h; sourceTree = "<group>"; };
+		2756FB301EC19DA200E44A55 /* ShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartViewController.m; sourceTree = "<group>"; };
+		2756FB331EC2472100E44A55 /* SessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
+		2756FB341EC2472100E44A55 /* SessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionManager.m; sourceTree = "<group>"; };
+		276BDB2C1ECCA88B0055A784 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		276BDB2D1ECCA88B0055A784 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		276BDB2F1ECCB7CA0055A784 /* EmployeesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeesTableViewController.h; sourceTree = "<group>"; };
+		276BDB301ECCB7CA0055A784 /* EmployeesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeesTableViewController.m; sourceTree = "<group>"; };
+		27A4E6C81ED31D5B00666E77 /* EmployeesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeesTableViewCell.h; sourceTree = "<group>"; };
+		27A4E6C91ED31D5B00666E77 /* EmployeesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeesTableViewCell.m; sourceTree = "<group>"; };
+		27E870771ECE42EA0001E8E4 /* WineCartList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineCartList.h; sourceTree = "<group>"; };
+		27E870781ECE42EA0001E8E4 /* WineCartList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineCartList.m; sourceTree = "<group>"; };
+		27E8707A1ECE78F00001E8E4 /* ShoppingCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartTableViewCell.h; sourceTree = "<group>"; };
+		27E8707B1ECE78F00001E8E4 /* ShoppingCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartTableViewCell.m; sourceTree = "<group>"; };
+		27F29B191EC940CD008A9A32 /* UserRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRealm.h; sourceTree = "<group>"; };
+		27F29B1A1EC940CD008A9A32 /* UserRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRealm.m; sourceTree = "<group>"; };
+		27F77B081EC2912400C6A927 /* WineListRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineListRequestModel.h; sourceTree = "<group>"; };
+		27F77B091EC2912400C6A927 /* WineListRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineListRequestModel.m; sourceTree = "<group>"; };
+		27F77B0B1EC2920500C6A927 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		27F77B0C1EC2920500C6A927 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		27F77B0E1EC2B4C900C6A927 /* WineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineModel.h; sourceTree = "<group>"; };
+		27F77B0F1EC2B4C900C6A927 /* WineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineModel.m; sourceTree = "<group>"; };
+		27F77B111EC2BE3000C6A927 /* WineListResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineListResponseModel.h; sourceTree = "<group>"; };
+		27F77B121EC2BE3000C6A927 /* WineListResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineListResponseModel.m; sourceTree = "<group>"; };
+		27F77B141EC3C5BE00C6A927 /* WineRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineRealm.h; sourceTree = "<group>"; };
+		27F77B151EC3C5BE00C6A927 /* WineRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineRealm.m; sourceTree = "<group>"; };
+		27F77B1A1EC5A06900C6A927 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		27F77B1B1EC5A06900C6A927 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		4F233218F7C34153295E7ACA /* Pods-SALIDO Wine Club (iOS Challenge).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SALIDO Wine Club (iOS Challenge).debug.xcconfig"; path = "Pods/Target Support Files/Pods-SALIDO Wine Club (iOS Challenge)/Pods-SALIDO Wine Club (iOS Challenge).debug.xcconfig"; sourceTree = "<group>"; };
+		88E83BF707703495552F12A6 /* libPods-SALIDO Wine Club (iOS Challenge).a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SALIDO Wine Club (iOS Challenge).a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA023849CD43E12562C8E8E7 /* Pods-SALIDO Wine Club (iOS Challenge).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SALIDO Wine Club (iOS Challenge).release.xcconfig"; path = "Pods/Target Support Files/Pods-SALIDO Wine Club (iOS Challenge)/Pods-SALIDO Wine Club (iOS Challenge).release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27387BF01EBE760D002C615B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380A42A3DD39816AB0A319E8 /* libPods-SALIDO Wine Club (iOS Challenge).a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27387BEA1EBE760D002C615B = {
+			isa = PBXGroup;
+			children = (
+				27387BF51EBE760D002C615B /* SALIDO Wine Club (iOS Challenge) */,
+				27387BF41EBE760D002C615B /* Products */,
+				AB72FDCD2D4ABE8B4B21CC2D /* Pods */,
+				B07E56374DA3EFDC9AC65465 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		27387BF41EBE760D002C615B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27387BF31EBE760D002C615B /* SALIDO Wine Club (iOS Challenge).app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27387BF51EBE760D002C615B /* SALIDO Wine Club (iOS Challenge) */ = {
+			isa = PBXGroup;
+			children = (
+				27F77B171EC3D5BD00C6A927 /* Realm */,
+				27F77B071EC290EF00C6A927 /* Models */,
+				2756FB321EC2404900E44A55 /* Network */,
+				27F77B061EC2907000C6A927 /* Views */,
+				27387BFF1EBE760E002C615B /* Main.storyboard */,
+				27387BF91EBE760E002C615B /* AppDelegate.h */,
+				27387BFA1EBE760E002C615B /* AppDelegate.m */,
+				27387C021EBE760E002C615B /* Assets.xcassets */,
+				27387C041EBE760E002C615B /* LaunchScreen.storyboard */,
+				27387C071EBE760E002C615B /* Info.plist */,
+				27387BF61EBE760D002C615B /* Supporting Files */,
+			);
+			path = "SALIDO Wine Club (iOS Challenge)";
+			sourceTree = "<group>";
+		};
+		27387BF61EBE760D002C615B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27387BF71EBE760D002C615B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2756FB321EC2404900E44A55 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2756FB331EC2472100E44A55 /* SessionManager.h */,
+				2756FB341EC2472100E44A55 /* SessionManager.m */,
+				27F77B0B1EC2920500C6A927 /* APIManager.h */,
+				27F77B0C1EC2920500C6A927 /* APIManager.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		27F77B061EC2907000C6A927 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				276BDB2C1ECCA88B0055A784 /* LeftMenuViewController.h */,
+				276BDB2D1ECCA88B0055A784 /* LeftMenuViewController.m */,
+				27387BFC1EBE760E002C615B /* ViewController.h */,
+				27387BFD1EBE760E002C615B /* ViewController.m */,
+				2756FB291EC162C600E44A55 /* HomeViewController.h */,
+				2756FB2A1EC162C600E44A55 /* HomeViewController.m */,
+				2756FB2C1EC1908F00E44A55 /* HomeTableViewCell.h */,
+				2756FB2D1EC1908F00E44A55 /* HomeTableViewCell.m */,
+				27F77B1A1EC5A06900C6A927 /* DetailViewController.h */,
+				27F77B1B1EC5A06900C6A927 /* DetailViewController.m */,
+				2756FB2F1EC19DA200E44A55 /* ShoppingCartViewController.h */,
+				2756FB301EC19DA200E44A55 /* ShoppingCartViewController.m */,
+				27E8707A1ECE78F00001E8E4 /* ShoppingCartTableViewCell.h */,
+				27E8707B1ECE78F00001E8E4 /* ShoppingCartTableViewCell.m */,
+				276BDB2F1ECCB7CA0055A784 /* EmployeesTableViewController.h */,
+				276BDB301ECCB7CA0055A784 /* EmployeesTableViewController.m */,
+				27A4E6C81ED31D5B00666E77 /* EmployeesTableViewCell.h */,
+				27A4E6C91ED31D5B00666E77 /* EmployeesTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		27F77B071EC290EF00C6A927 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27F77B081EC2912400C6A927 /* WineListRequestModel.h */,
+				27F77B091EC2912400C6A927 /* WineListRequestModel.m */,
+				27F77B0E1EC2B4C900C6A927 /* WineModel.h */,
+				27F77B0F1EC2B4C900C6A927 /* WineModel.m */,
+				27F77B111EC2BE3000C6A927 /* WineListResponseModel.h */,
+				27F77B121EC2BE3000C6A927 /* WineListResponseModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		27F77B171EC3D5BD00C6A927 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				27F77B141EC3C5BE00C6A927 /* WineRealm.h */,
+				27F77B151EC3C5BE00C6A927 /* WineRealm.m */,
+				27E870771ECE42EA0001E8E4 /* WineCartList.h */,
+				27E870781ECE42EA0001E8E4 /* WineCartList.m */,
+				27F29B191EC940CD008A9A32 /* UserRealm.h */,
+				27F29B1A1EC940CD008A9A32 /* UserRealm.m */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
+		AB72FDCD2D4ABE8B4B21CC2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F233218F7C34153295E7ACA /* Pods-SALIDO Wine Club (iOS Challenge).debug.xcconfig */,
+				BA023849CD43E12562C8E8E7 /* Pods-SALIDO Wine Club (iOS Challenge).release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B07E56374DA3EFDC9AC65465 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88E83BF707703495552F12A6 /* libPods-SALIDO Wine Club (iOS Challenge).a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27387BF21EBE760D002C615B /* SALIDO Wine Club (iOS Challenge) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27387C0A1EBE760E002C615B /* Build configuration list for PBXNativeTarget "SALIDO Wine Club (iOS Challenge)" */;
+			buildPhases = (
+				22D7817A1214A0EA133B0861 /* [CP] Check Pods Manifest.lock */,
+				27387BEF1EBE760D002C615B /* Sources */,
+				27387BF01EBE760D002C615B /* Frameworks */,
+				27387BF11EBE760D002C615B /* Resources */,
+				6B620D7CB791C69AB9E57CC1 /* [CP] Embed Pods Frameworks */,
+				FA4F6F8432E9DFD9CCA6ED7E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SALIDO Wine Club (iOS Challenge)";
+			productName = "SALIDO Wine Club (iOS Challenge)";
+			productReference = 27387BF31EBE760D002C615B /* SALIDO Wine Club (iOS Challenge).app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27387BEB1EBE760D002C615B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Elmer Astudillo";
+				TargetAttributes = {
+					27387BF21EBE760D002C615B = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = BT6SS5GUF3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 27387BEE1EBE760D002C615B /* Build configuration list for PBXProject "SALIDO Wine Club (iOS Challenge)" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27387BEA1EBE760D002C615B;
+			productRefGroup = 27387BF41EBE760D002C615B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27387BF21EBE760D002C615B /* SALIDO Wine Club (iOS Challenge) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27387BF11EBE760D002C615B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27387C061EBE760E002C615B /* LaunchScreen.storyboard in Resources */,
+				27387C031EBE760E002C615B /* Assets.xcassets in Resources */,
+				27387C011EBE760E002C615B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22D7817A1214A0EA133B0861 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6B620D7CB791C69AB9E57CC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SALIDO Wine Club (iOS Challenge)/Pods-SALIDO Wine Club (iOS Challenge)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA4F6F8432E9DFD9CCA6ED7E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SALIDO Wine Club (iOS Challenge)/Pods-SALIDO Wine Club (iOS Challenge)-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27387BEF1EBE760D002C615B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F29B1B1EC940CD008A9A32 /* UserRealm.m in Sources */,
+				2756FB311EC19DA200E44A55 /* ShoppingCartViewController.m in Sources */,
+				27A4E6CA1ED31D5B00666E77 /* EmployeesTableViewCell.m in Sources */,
+				27387BFE1EBE760E002C615B /* ViewController.m in Sources */,
+				276BDB311ECCB7CA0055A784 /* EmployeesTableViewController.m in Sources */,
+				27F77B0D1EC2920500C6A927 /* APIManager.m in Sources */,
+				27F77B0A1EC2912400C6A927 /* WineListRequestModel.m in Sources */,
+				27E870791ECE42EA0001E8E4 /* WineCartList.m in Sources */,
+				27F77B131EC2BE3000C6A927 /* WineListResponseModel.m in Sources */,
+				27387BFB1EBE760E002C615B /* AppDelegate.m in Sources */,
+				27F77B161EC3C5BE00C6A927 /* WineRealm.m in Sources */,
+				2756FB2E1EC1908F00E44A55 /* HomeTableViewCell.m in Sources */,
+				27387BF81EBE760D002C615B /* main.m in Sources */,
+				27F77B1C1EC5A06900C6A927 /* DetailViewController.m in Sources */,
+				27E8707C1ECE78F00001E8E4 /* ShoppingCartTableViewCell.m in Sources */,
+				2756FB351EC2472100E44A55 /* SessionManager.m in Sources */,
+				27F77B101EC2B4C900C6A927 /* WineModel.m in Sources */,
+				276BDB2E1ECCA88B0055A784 /* LeftMenuViewController.m in Sources */,
+				2756FB2B1EC162C600E44A55 /* HomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		27387BFF1EBE760E002C615B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27387C001EBE760E002C615B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27387C041EBE760E002C615B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27387C051EBE760E002C615B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27387C081EBE760E002C615B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27387C091EBE760E002C615B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27387C0B1EBE760E002C615B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F233218F7C34153295E7ACA /* Pods-SALIDO Wine Club (iOS Challenge).debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BT6SS5GUF3;
+				INFOPLIST_FILE = "SALIDO Wine Club (iOS Challenge)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AI.SALIDO-Wine-Club--iOS-Challenge-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27387C0C1EBE760E002C615B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA023849CD43E12562C8E8E7 /* Pods-SALIDO Wine Club (iOS Challenge).release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BT6SS5GUF3;
+				INFOPLIST_FILE = "SALIDO Wine Club (iOS Challenge)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AI.SALIDO-Wine-Club--iOS-Challenge-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27387BEE1EBE760D002C615B /* Build configuration list for PBXProject "SALIDO Wine Club (iOS Challenge)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27387C081EBE760E002C615B /* Debug */,
+				27387C091EBE760E002C615B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27387C0A1EBE760E002C615B /* Build configuration list for PBXNativeTarget "SALIDO Wine Club (iOS Challenge)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27387C0B1EBE760E002C615B /* Debug */,
+				27387C0C1EBE760E002C615B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27387BEB1EBE760D002C615B /* Project object */;
+}
