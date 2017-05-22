@@ -51,7 +51,6 @@
                     [realm addOrUpdateObject:wineRealm];
                 }
                 [realm commitWriteTransaction];
-                [wineTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     RLMRealm *realmMainThread = [RLMRealm defaultRealm];
@@ -144,15 +143,12 @@
     WineRealm *wineRealm = self.wines[[indexPath item]];
     NSString *wineName = wineRealm.name;
     NSString *imageURL = wineRealm.imageURL;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.titleLabel.text = wineName;
     [cell.wineImageView setImageWithURL:[NSURL URLWithString:imageURL]
                        placeholderImage:nil];
     cell.addItemToCartButton.tag = [indexPath item];
     [cell.addItemToCartButton addTarget:self action:@selector(addItemToCartButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
-    //dispatch_async(dispatch_get_main_queue(), ^{
-      //  [self.wineTableView reloadData];
-    //});
  
     return cell;
 }
