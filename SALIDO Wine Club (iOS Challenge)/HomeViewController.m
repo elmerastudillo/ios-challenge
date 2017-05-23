@@ -48,14 +48,14 @@
                     [realm addOrUpdateObject:wineRealm];
                 }
                 [realm commitWriteTransaction];
-                //[wineTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     //RLMRealm *realmMainThread = [RLMRealm defaultRealm];
                     RLMResults *wines = [WineRealm allObjects];
                     self.wines = wines;
+                    NSLog(@"%@",wines);
                     wineTableView.delegate = self;
                     wineTableView.dataSource = self;
-                    //[self.wineTableView reloadData];
+                    [self.wineTableView reloadData];
                 });
             }
         });
@@ -64,14 +64,11 @@
         self.wines = [WineRealm allObjects];
         [self.wineTableView reloadData];
     }];
-    
-    //[self.wineTableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [wineTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,12 +78,50 @@
 
 #pragma mark - IBActions
 
-//Sorting wine query by name|ascending
+//Button: Sorting wine query by name|ascending
 - (IBAction)sortButtonWasPressed:(UIBarButtonItem *)sender
 {
     
     WineListRequestModel * requestModel = [WineListRequestModel new];
     requestModel.sort = @"name|ascending";
+    requestModel.size = [NSNumber numberWithInt:50];
+    
+    [[APIManager sharedManager] getWinesWithRequestModel:requestModel success:^(WineListResponseModel *responseModel) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            @autoreleasepool {
+                //NSLog(@"RESPONSE MODEL: %@",responseModel);
+                RLMRealm *realm = [RLMRealm defaultRealm];
+                [realm beginWriteTransaction];
+                [realm deleteObjects:[WineRealm allObjects]];
+                [realm commitWriteTransaction];
+                
+                [realm beginWriteTransaction];
+                for(WineModel *wine in responseModel.wines){
+                    WineRealm *wineRealm = [[WineRealm alloc] initWithMantleModel:wine];
+                    [realm addOrUpdateObject:wineRealm];
+                }
+                [realm commitWriteTransaction];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    RLMRealm *realmMainThread = [RLMRealm defaultRealm];
+                    RLMResults *wines = [WineRealm allObjectsInRealm:realmMainThread];
+                    self.wines = wines;
+                    [self.wineTableView reloadData];
+                });
+            }
+        });
+        
+    } failure:^(NSError *error) {
+        self.wines = [WineRealm allObjects];
+        [self.wineTableView reloadData];
+    }];
+}
+
+//Button: Filter Wine API Query
+- (IBAction)filterButtonWasPressed:(UIBarButtonItem *)sender {
+    
+    WineListRequestModel * requestModel = [WineListRequestModel new];
     requestModel.filter = @"";
     requestModel.size = [NSNumber numberWithInt:50];
     
@@ -111,7 +146,7 @@
                     RLMRealm *realmMainThread = [RLMRealm defaultRealm];
                     RLMResults *wines = [WineRealm allObjectsInRealm:realmMainThread];
                     self.wines = wines;
-                    [wineTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+                    [self.wineTableView reloadData];
                 });
             }
         });
@@ -120,7 +155,10 @@
         self.wines = [WineRealm allObjects];
         [self.wineTableView reloadData];
     }];
+
+    
 }
+
 
 
 #pragma mark - Table View Datasource & Delegate methods

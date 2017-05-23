@@ -162,8 +162,6 @@
         RLMRealm *realm = [RLMRealm defaultRealm];
         [realm beginWriteTransaction];
         RLMResults *wines = [WineRealm allObjects];
-        WineRealm *wineRealm = wines[sender.tag];
-        wineRealm.quantity = 0;
         WineCartList *wineList = [[WineCartList alloc] init];
         RLMArray <WineCartList *> *wineLists = (RLMArray <WineCartList *> *) [WineCartList allObjects];
         wineList = wineLists.firstObject;
@@ -172,6 +170,8 @@
         //Breaks here
         if (index < wineList.wineCartList.count)
         {
+            WineRealm *wineRealm = wines[sender.tag];
+            wineRealm.quantity = 0;
             [wineList.wineCartList removeObjectAtIndex:index];
             [realm addObject:wineList];
             [realm commitWriteTransaction];
