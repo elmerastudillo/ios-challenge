@@ -110,11 +110,13 @@
         
         [realm addObject:wineList];
         [realm commitWriteTransaction];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"You have added items to your cart!" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     });
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"You have added items to your cart!" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - TextField Delegate methods

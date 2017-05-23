@@ -30,9 +30,6 @@
     
     NSLog(@"%@",[RLMRealmConfiguration defaultConfiguration].fileURL);
     
-    wineTableView.delegate = self;
-    wineTableView.dataSource = self;
-    
     WineListRequestModel * requestModel = [WineListRequestModel new];
     //You can set a custom request model from the Wine API here
     requestModel.sort = @"";
@@ -51,12 +48,14 @@
                     [realm addOrUpdateObject:wineRealm];
                 }
                 [realm commitWriteTransaction];
-                
+                //[wineTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    RLMRealm *realmMainThread = [RLMRealm defaultRealm];
-                    RLMResults *wines = [WineRealm allObjectsInRealm:realmMainThread];
+                    //RLMRealm *realmMainThread = [RLMRealm defaultRealm];
+                    RLMResults *wines = [WineRealm allObjects];
                     self.wines = wines;
-                    [wineTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+                    wineTableView.delegate = self;
+                    wineTableView.dataSource = self;
+                    //[self.wineTableView reloadData];
                 });
             }
         });
@@ -66,7 +65,7 @@
         [self.wineTableView reloadData];
     }];
     
-    [self.wineTableView reloadData];
+    //[self.wineTableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -127,7 +126,9 @@
 #pragma mark - Table View Datasource & Delegate methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"%lu",(unsigned long)self.wines.count);
     return self.wines.count;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -226,11 +227,13 @@
         
         [realm addObject:wineList];
         [realm commitWriteTransaction];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Wine Cart" message:@"Item was added to cart" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler: nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     });
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Wine Cart" message:@"Item was added to cart" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler: nil]];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 

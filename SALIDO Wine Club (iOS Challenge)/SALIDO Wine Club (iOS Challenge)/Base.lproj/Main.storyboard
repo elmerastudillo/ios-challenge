@@ -166,7 +166,7 @@
                                         <rect key="frame" x="0.0" y="28" width="768" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PIL-4k-fba" id="xHE-9c-qV7">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="124"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="123.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fwf-55-PfB">
@@ -205,10 +205,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="FAw-jC-Js2" id="ajP-U0-lWB"/>
-                                    <outlet property="delegate" destination="FAw-jC-Js2" id="hxH-Ss-055"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,7 +217,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="wineTableView" destination="vaK-Xt-McU" id="gCO-Ul-8nw"/>
+                        <outlet property="wineTableView" destination="vaK-Xt-McU" id="P6s-Cc-iNO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jH3-Nw-69S" userLabel="First Responder" sceneMemberID="firstResponder"/>

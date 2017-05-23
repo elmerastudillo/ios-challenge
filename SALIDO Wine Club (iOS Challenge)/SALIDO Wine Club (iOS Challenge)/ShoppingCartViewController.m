@@ -169,12 +169,22 @@
         wineList = wineLists.firstObject;
         
         NSInteger index = sender.tag;
-        [wineList.wineCartList removeObjectAtIndex:index];
-        [realm addObject:wineList];
-        [realm commitWriteTransaction];
-        [_cartTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+        //Breaks here
+        if (index < wineList.wineCartList.count)
+        {
+            [wineList.wineCartList removeObjectAtIndex:index];
+            [realm addObject:wineList];
+            [realm commitWriteTransaction];
+            [_cartTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+        }
+        else
+        {
+            NSLog(@"Realm error: Wrong index was accessed");
+            [realm commitWriteTransaction];
+        }
     });
 }
+
 
 #pragma mark - TextField Delegate methods
 
@@ -202,6 +212,7 @@
         [realm deleteObjects:[WineCartList allObjects]];
         [realm commitWriteTransaction];
         [_cartTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Order Complete" message:@"Your order is complete. Start a new order?" preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
