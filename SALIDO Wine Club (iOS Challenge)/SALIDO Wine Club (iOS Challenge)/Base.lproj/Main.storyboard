@@ -182,8 +182,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwc-vt-5dI">
-                                                    <rect key="frame" x="579" y="85" width="155" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwc-vt-5dI">
+                                                    <rect key="frame" x="623" y="85" width="111" height="30"/>
                                                     <state key="normal" title="Add item to cart"/>
                                                 </button>
                                             </subviews>
@@ -333,11 +333,27 @@
                                     <action selector="confirmOrderButtonWasPressed:" destination="76D-Oj-W3G" eventType="touchUpInside" id="y0D-Gj-yPA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="totalLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTz-MV-yeH">
+                                <rect key="frame" x="640" y="714" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total Items:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqh-8i-5zU">
+                                <rect key="frame" x="543" y="714" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wqh-8i-5zU" firstAttribute="top" secondItem="QVD-lz-Car" secondAttribute="bottom" constant="26" id="3F7-2T-liq"/>
                             <constraint firstItem="QVD-lz-Car" firstAttribute="top" secondItem="wBK-Qv-bg2" secondAttribute="bottom" constant="20" id="Ah2-xh-jit"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uTz-MV-yeH" secondAttribute="trailing" id="ZgH-fM-nZA"/>
                             <constraint firstAttribute="trailing" secondItem="QVD-lz-Car" secondAttribute="trailing" id="a81-Yu-LcV"/>
+                            <constraint firstItem="uTz-MV-yeH" firstAttribute="leading" secondItem="wqh-8i-5zU" secondAttribute="trailing" constant="8" id="awm-Y7-BdD"/>
+                            <constraint firstItem="uTz-MV-yeH" firstAttribute="top" secondItem="QVD-lz-Car" secondAttribute="bottom" constant="26" id="d20-Pi-qVJ"/>
                             <constraint firstItem="QVD-lz-Car" firstAttribute="centerX" secondItem="mRI-af-Zos" secondAttribute="centerX" id="edx-ID-NjU"/>
                             <constraint firstItem="QVD-lz-Car" firstAttribute="leading" secondItem="dg4-q2-ppH" secondAttribute="leading" id="iF9-wk-sOM"/>
                             <constraint firstItem="1pG-ZZ-83o" firstAttribute="top" secondItem="mRI-af-Zos" secondAttribute="bottom" constant="79" id="kvg-dq-SYD"/>
@@ -345,6 +361,7 @@
                     </view>
                     <connections>
                         <outlet property="cartTableView" destination="QVD-lz-Car" id="kPo-bp-GCW"/>
+                        <outlet property="totalLabel" destination="uTz-MV-yeH" id="ert-ch-2Aa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOg-mF-Pet" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,4 +12,6 @@
 @interface ShoppingCartViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,SlideNavigationControllerDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *cartTableView;
 
+@property (strong, nonatomic) IBOutlet UILabel *totalLabel;
+
 @end

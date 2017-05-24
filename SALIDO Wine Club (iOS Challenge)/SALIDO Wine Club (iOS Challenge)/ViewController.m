@@ -10,6 +10,10 @@
 #import "HomeViewController.h"
 #import "UserRealm.h"
 #import <Realm/Realm.h>
+#import "WineListRequestModel.h"
+#import "APIManager.h"
+#import "WineModel.h"
+#import "WineRealm.h"
 
 @interface ViewController ()
 
@@ -26,6 +30,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib
+    
+    WineListRequestModel * requestModel = [WineListRequestModel new];
+    //You can set a custom request model from the Wine API here
+    requestModel.sort = @"";
+    requestModel.filter = @"";
+    requestModel.size = [NSNumber numberWithInt:100];
+    
+    //Get HTTP call to Wine Rest API
+    [[APIManager sharedManager] getWinesWithRequestModel:requestModel success:^(WineListResponseModel *responseModel) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            @autoreleasepool {
+                
+                RLMRealm *realm = [RLMRealm defaultRealm];
+                [realm beginWriteTransaction];
+                [realm deleteObjects:[WineRealm allObjects]];
+                [realm commitWriteTransaction];
+                
+                [realm beginWriteTransaction];
+                
+                for(WineModel *wine in responseModel.wines){
+                    WineRealm *wineRealm = [[WineRealm alloc] initWithMantleModel:wine];
+                    [realm addOrUpdateObject:wineRealm];
+                }
+                [realm commitWriteTransaction];
+            }
+        });
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

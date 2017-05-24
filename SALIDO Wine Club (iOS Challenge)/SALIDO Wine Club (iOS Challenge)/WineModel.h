@@ -13,6 +13,5 @@
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSArray *Labels;
 @property (nonatomic,copy) NSString *wineDescription;
-//@property (nonatomic,copy) NSString *image;
 
 @end

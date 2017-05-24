@@ -17,6 +17,9 @@
 @property (nonatomic, strong) RLMResults *results;
 @property NSUInteger amountOfItemsForRows;
 @property NSNumber *quantity;
+@property NSNumber *totalItemsInCart;
+
+- (void)calculateCartTotal:(NSNumber *)total;
 
 @end
 
@@ -30,6 +33,10 @@
     _cartTableView.dataSource = self;
     
     self.navigationItem.title = @"Shopping Cart";
+    
+    _totalItemsInCart = [[NSNumber alloc] init];
+    [self calculateCartTotal:_totalItemsInCart];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,12 +48,19 @@
 {
     [super viewWillAppear:animated];
     [_cartTableView reloadData];
+    
+    NSNumber *total = [[NSNumber alloc] init];
+    [self calculateCartTotal:total];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear: animated];
     [_cartTableView reloadData];
+    
+    NSNumber *total = [[NSNumber alloc] init];
+    [self calculateCartTotal:total];
 }
 
 #pragma mark - SlideNavigationControllerDelegate Methods
@@ -96,7 +110,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    //Instantiating a Storyboard object to get access to our viewcontroller we want to navigate and pass data to
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailViewController *detailVC = (DetailViewController*)[storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
     RLMArray <WineCartList *> *wineLists = (RLMArray <WineCartList *> *) [WineCartList allObjects];
@@ -116,6 +130,7 @@
 
 
 //TextField Update Quantity
+//** Click RETURN on keyboard when editing quantity textview for following method to be called
 - (void)updateItemButtonWasPressed:(UITextField *)sender
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -135,6 +150,7 @@
             
             //TODO: Need to bring UI Objects to the Main thread
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self calculateCartTotal:_totalItemsInCart];
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Shopping Cart" message:@"Quantity was updated for cart" preferredStyle:UIAlertControllerStyleAlert];
                 
                 [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
@@ -167,11 +183,13 @@
         wineList = wineLists.firstObject;
         
         NSInteger index = sender.tag;
-        //Breaks here
+        
         if (index < wineList.wineCartList.count)
         {
             WineRealm *wineRealm = wines[sender.tag];
             wineRealm.quantity = 0;
+            // Realm bug 
+            // Terminating app due to uncaught exception 'RLMException', reason: 'Index 1 is out of bounds (must be less than 1)'
             [wineList.wineCartList removeObjectAtIndex:index];
             [realm addObject:wineList];
             [realm commitWriteTransaction];
@@ -183,6 +201,23 @@
             [realm commitWriteTransaction];
         }
     });
+}
+
+//Calculate total
+- (void)calculateCartTotal:(NSNumber *)total
+{
+    total = [[NSNumber alloc] init];
+    RLMArray <WineCartList *> *wineLists = (RLMArray <WineCartList *> *) [WineCartList allObjects];
+    WineCartList *cart = wineLists.firstObject;
+    
+    for(WineRealm *wineRlm in cart.wineCartList)
+    {
+        int value = [total intValue];
+        int wineRlmQty = [wineRlm.quantity intValue];
+        total = [NSNumber numberWithInt:value + wineRlmQty];
+    }
+    
+    _totalLabel.text = [NSString stringWithFormat:@"%@",total];
 }
 
 
@@ -205,7 +240,6 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         RLMRealm *realm = [RLMRealm defaultRealm];
         [realm beginWriteTransaction];
-        //WineRealm *wineRealm = [[WineRealm alloc] init];
         WineCartList *wineList = [[WineCartList alloc] init];
         RLMArray <WineCartList *> *wineLists = (RLMArray <WineCartList *> *) [WineCartList allObjects];
         wineList = wineLists.firstObject;

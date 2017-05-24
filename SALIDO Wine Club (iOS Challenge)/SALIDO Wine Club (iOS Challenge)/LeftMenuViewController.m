@@ -119,16 +119,6 @@
         case 3:
             
             [self.menuTableView deselectRowAtIndexPath:[self.menuTableView indexPathForSelectedRow] animated:YES];
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                RLMRealm *realm = [RLMRealm defaultRealm];
-                [realm beginWriteTransaction];
-                WineCartList *wineList = [[WineCartList alloc] init];
-                RLMArray <WineCartList *> *wineLists = (RLMArray <WineCartList *> *) [WineCartList allObjects];
-                wineList = wineLists.firstObject;
-                [realm deleteObjects:[WineCartList allObjects]];
-                [realm deleteObjects:[WineRealm allObjects]];
-                [realm commitWriteTransaction];
-            });
             [[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
             return;
             break;

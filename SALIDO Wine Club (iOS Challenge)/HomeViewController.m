@@ -28,47 +28,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // Simulator: File path for realm database
     NSLog(@"%@",[RLMRealmConfiguration defaultConfiguration].fileURL);
     
-    WineListRequestModel * requestModel = [WineListRequestModel new];
-    //You can set a custom request model from the Wine API here
-    requestModel.sort = @"";
-    requestModel.filter = @"";
-    requestModel.size = [NSNumber numberWithInt:50];
+    wineTableView.delegate = self;
+    wineTableView.dataSource = self;
     
-    [[APIManager sharedManager] getWinesWithRequestModel:requestModel success:^(WineListResponseModel *responseModel) {
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            @autoreleasepool {
-                
-                RLMRealm *realm = [RLMRealm defaultRealm];
-                [realm beginWriteTransaction];
-                for(WineModel *wine in responseModel.wines){
-                    WineRealm *wineRealm = [[WineRealm alloc] initWithMantleModel:wine];
-                    [realm addOrUpdateObject:wineRealm];
-                }
-                [realm commitWriteTransaction];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    //RLMRealm *realmMainThread = [RLMRealm defaultRealm];
-                    RLMResults *wines = [WineRealm allObjects];
-                    self.wines = wines;
-                    NSLog(@"%@",wines);
-                    wineTableView.delegate = self;
-                    wineTableView.dataSource = self;
-                    [self.wineTableView reloadData];
-                });
-            }
-        });
-        
-    } failure:^(NSError *error) {
-        self.wines = [WineRealm allObjects];
-        [self.wineTableView reloadData];
-    }];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    RLMResults *wineList = [WineRealm allObjectsInRealm:realm];
+    self.wines = wineList;
+    [self.wineTableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self.wineTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,14 +58,16 @@
 {
     
     WineListRequestModel * requestModel = [WineListRequestModel new];
+    //You can set a custom request model from the Wine API here
     requestModel.sort = @"name|ascending";
-    requestModel.size = [NSNumber numberWithInt:50];
+    requestModel.filter = @"";
+    requestModel.size = [NSNumber numberWithInt:100];
     
     [[APIManager sharedManager] getWinesWithRequestModel:requestModel success:^(WineListResponseModel *responseModel) {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             @autoreleasepool {
-                //NSLog(@"RESPONSE MODEL: %@",responseModel);
+            
                 RLMRealm *realm = [RLMRealm defaultRealm];
                 [realm beginWriteTransaction];
                 [realm deleteObjects:[WineRealm allObjects]];
@@ -102,12 +79,16 @@
                     [realm addOrUpdateObject:wineRealm];
                 }
                 [realm commitWriteTransaction];
+                [self.wineTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     RLMRealm *realmMainThread = [RLMRealm defaultRealm];
                     RLMResults *wines = [WineRealm allObjectsInRealm:realmMainThread];
-                    self.wines = wines;
-                    [self.wineTableView reloadData];
+                    self.wines = wines; [WineRealm allObjects];
+                    if (self.wines > 0)
+                    {
+                        [self.wineTableView reloadData];
+                    }
                 });
             }
         });
@@ -122,8 +103,10 @@
 - (IBAction)filterButtonWasPressed:(UIBarButtonItem *)sender {
     
     WineListRequestModel * requestModel = [WineListRequestModel new];
+    requestModel.sort = @"categories";
     requestModel.filter = @"";
     requestModel.size = [NSNumber numberWithInt:50];
+    
     
     [[APIManager sharedManager] getWinesWithRequestModel:requestModel success:^(WineListResponseModel *responseModel) {
         
@@ -138,15 +121,19 @@
                 [realm beginWriteTransaction];
                 for(WineModel *wine in responseModel.wines){
                     WineRealm *wineRealm = [[WineRealm alloc] initWithMantleModel:wine];
-                    [realm addOrUpdateObject:wineRealm];
+                    [realm addObject:wineRealm];
                 }
                 [realm commitWriteTransaction];
+                [self.wineTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     RLMRealm *realmMainThread = [RLMRealm defaultRealm];
                     RLMResults *wines = [WineRealm allObjectsInRealm:realmMainThread];
                     self.wines = wines;
-                    [self.wineTableView reloadData];
+                    if (self.wines > 0)
+                    {
+                        [self.wineTableView reloadData];
+                    }
                 });
             }
         });
@@ -164,7 +151,7 @@
 #pragma mark - Table View Datasource & Delegate methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%lu",(unsigned long)self.wines.count);
+    NSLog(@"Rows: %lu",(unsigned long)self.wines.count);
     return self.wines.count;
     
 }
